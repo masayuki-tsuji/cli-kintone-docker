@@ -19,6 +19,11 @@ $ docker run --rm cli-kintone:0.9.4
 ```
 
 # メモ
+- cli-kintoneのバイナリファイルをbinへコピーする
+    ```bash
+    $ docker run --rm -v $(pwd)/bin:/tmp/dummy --entrypoint="cp" cli-kintone:0.9.4 -p cli-kintone /tmp/dummy/cli-kintone
+    ```
+
 - CSVファイル出力
     ```bash
     $ docker run --rm cli-kintone:0.9.4 -a [アプリID] -d [サブドメイン名] -t [APIトークン] > output.csv
